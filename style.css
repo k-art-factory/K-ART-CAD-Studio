@@ -1,0 +1,30 @@
+*{box-sizing:border-box}body{margin:0;background:#151b23;color:#e8edf5;font:14px system-ui,-apple-system,"Noto Sans JP",sans-serif;height:100vh;display:flex;flex-direction:column}header{height:50px;display:flex;align-items:center;gap:8px;padding:7px 12px;background:#202b39;border-bottom:1px solid #354355}header strong{font-size:17px}header small{color:#9fb2c7;margin-right:16px}.grow{flex:1}button{background:#34465a;color:#eef4fa;border:1px solid #4c6074;border-radius:5px;padding:8px 10px;cursor:pointer}button:hover{background:#49627c}button.active{background:#1675ae;border-color:#48a7e1}.layout{display:flex;flex:1;min-height:0}aside{width:190px;flex-shrink:0;padding:12px;background:#222d3b;display:flex;flex-direction:column;gap:9px;overflow:auto}aside.properties{width:225px}h3{font-size:13px;margin:5px 0 7px;color:#c1d5e8}aside button{text-align:left}label{display:flex;flex-direction:column;gap:4px;font-size:12px}label:has([type=checkbox]){flex-direction:row;align-items:center}input[type=number]{width:100%;background:#111a24;color:white;border:1px solid #526579;border-radius:4px;padding:7px}.hint{color:#a9bbce;font-size:12px;line-height:1.7}#viewport{flex:1;min-width:0;position:relative;background:#111820;overflow:hidden}canvas{display:block;width:100%;height:100%;touch-action:none;cursor:crosshair}pre{white-space:pre-wrap;font-size:11px;color:#b9d6ec}footer{display:flex;justify-content:space-between;gap:8px;padding:7px 13px;background:#202b39;border-top:1px solid #354355;font-size:12px;color:#bed1e3}@media(max-width:800px){aside{width:145px}.properties{width:165px!important}header{flex-wrap:wrap;height:auto}}
+
+select{width:100%;background:#111a24;color:white;border:1px solid #526579;border-radius:4px;padding:7px}
+
+.preview-overlay[hidden]{display:none!important}
+.preview-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:20px}
+.preview-panel{background:#f3f4f6;color:#111827;width:min(1100px,96vw);height:min(850px,94vh);display:flex;flex-direction:column;border-radius:8px;overflow:hidden}
+.preview-bar{display:flex;align-items:center;gap:12px;padding:10px 16px;background:#fff;border-bottom:1px solid #bbb}
+.preview-bar span{flex:1;font-size:12px;color:#555}
+.preview-canvas{min-height:0;flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;padding:20px}
+.preview-canvas svg{display:block;max-width:100%;max-height:100%;width:auto;height:auto;box-shadow:0 3px 16px #888;background:white}
+
+/* RC3: collapsible tool panels, viewport shortcuts and language picker */
+#leftPanel,#rightPanel{transition:width .15s ease,padding .15s ease}#leftPanel.collapsed,#rightPanel.collapsed{width:0!important;padding:0;border:0;overflow:hidden}#leftPanel.collapsed>*,#rightPanel.collapsed>*{visibility:hidden}.viewport-controls{position:absolute;z-index:5;top:8px;left:8px;right:8px;display:flex;justify-content:space-between;pointer-events:none}.viewport-controls button{pointer-events:auto;background:#26394fdd}.language-picker{display:flex;flex-direction:row;align-items:center;white-space:nowrap;gap:6px}.language-picker select{width:auto;min-width:95px}header{height:auto;min-height:50px;flex-wrap:wrap}#viewport{isolation:isolate}
+
+/* RC4: compact File and Print header menus */
+.header-menus{display:flex;gap:6px;align-items:center;flex-shrink:0}
+.header-menu{position:relative;z-index:30}
+.header-menu>summary{list-style:none;cursor:pointer;user-select:none;padding:8px 13px;background:#34465a;border:1px solid #4c6074;border-radius:5px;white-space:nowrap}
+.header-menu>summary::-webkit-details-marker{display:none}
+.header-menu>summary::after{content:' ▾';font-size:11px;color:#b5cee2}
+.header-menu[open]>summary,.header-menu>summary:hover,.header-menu>summary:focus-visible{background:#49627c}
+.header-menu .menu-items{position:absolute;left:0;top:calc(100% + 2px);min-width:165px;padding:5px;background:#243245;border:1px solid #53697f;box-shadow:0 8px 22px #0009;border-radius:6px;display:flex;flex-direction:column;gap:2px;z-index:40}
+.header-menu .menu-items button{display:block;text-align:left;width:100%;background:transparent;border:0;padding:9px 11px;white-space:nowrap}
+.header-menu .menu-items button:hover,.header-menu .menu-items button:focus-visible{background:#49627c}
+.header-menu .menu-divider{height:1px;background:#53697f;margin:4px 5px}
+@media(max-width:600px){.header-menu .menu-items{min-width:150px}}
+
+/* RC5 editing properties */
+#entityProperties{display:flex;flex-direction:column;gap:8px}#entityProperties label{color:#c5d8e8}#entityProperties textarea{width:100%;background:#111a24;color:white;border:1px solid #526579;border-radius:4px;padding:7px}#rightPanel{min-width:0}
